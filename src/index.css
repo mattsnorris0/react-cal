@@ -10,6 +10,48 @@
   --tertiary: #e3e0cc;
   --background: #9fa9a3;
   --fc-button-bg-color: #9fa9a3;
+  --fc-button-border-color: #272727;
+  --fc-button-hover-bg-color: rgba(159, 169, 163, 0.8);
+  --fc-button-hover-border-color: #1a252f;
+  --fc-button-active-bg-color: hsla(144, 5%, 20%, 0.8);
+  --fc-button-active-border-color: #151e27;
+  --fc-today-bg-color: hsla(144, 5%, 92%, 1);
+}
+
+/* Keyframes for dialog and popover elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Keyframes for the backdrop pseudo-element */
+@keyframes backdropFadeIn {
+  from {
+    background: hsl(0 0% 0% / 0%);
+  }
+  to {
+    background: hsl(0 0% 0% / 50%);
+  }
+}
+@keyframes backdropFadeOut {
+  from {
+    background: hsl(0 0% 0% / 50%);
+  }
+  to {
+    background: hsl(0 0% 0% / 0%);
+  }
 }
 
 @theme inline {
@@ -28,26 +70,8 @@ img {
   shape-margin: 0.75rem;
 }
 
-a {
+/* a {
   cursor: pointer;
-}
-
-/* @layer components {
-  .btn {
-    border-radius: 0.8em;
-    padding: 0.2em 1.3em;
-    background-color: var(--color-primary);
-    color: var(--color-light);
-    transition: 400ms;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 2.2em;
-    text-transform: uppercase;
-  }
-
-  .btn:hover {
-    background-color: #8f9893;
-  }
 } */
 
 body {
@@ -55,10 +79,18 @@ body {
   color: var(--foreground);
 }
 
-.fc-daygrid-event-dot {
-  display: none;
+.fc-daygrid-day-number {
+  cursor: default;
 }
 
+.fc-daygrid-event-dot {
+  display: none;
+  cursor: pointer;
+}
+
+.fc-daygrid-dot-event {
+  padding: 2px 3px;
+}
 .fc-daygrid-dot-event {
   .fc-event-title {
     font-weight: normal;
@@ -78,6 +110,20 @@ body {
   }
 }
 
+/* #modal {
+  transition: display 0s allow-discrete, overlay 0s allow-discrete;
+  animation: fadeOut 0.5s forwards;
+  &::backdrop {
+    animation: backdropFadeOut 0.5s forwards;
+  }
+  &[open] {
+    animation: fadeIn 0.5s forwards;
+    &::backdrop {
+      animation: backdropFadeIn 0.5s forwards;
+    }
+  }
+} */
+
 /* .modal {
   position: relative;
   min-width: 50%;
@@ -90,7 +136,7 @@ body {
   justify-content: center;
 } */
 
-.modal::backdrop {
+#modal::backdrop {
   background-color: var(--color-primary);
   opacity: 0.7;
 }
