@@ -1,8 +1,7 @@
 import './App.css';
 import Calendar from './Calendar';
-import { getCalendar } from './utils/api_fetch';
+import { getCalendar, getEvents } from './utils/api_fetch';
 import { useState, useEffect } from 'react';
-// import Ref from './Ref';
 
 function App() {
   const [data, setData] = useState();
@@ -34,7 +33,7 @@ function App() {
           description: e.description,
         };
       });
-      // console.log(calData);
+      console.log(await getEvents());
       setData(calData);
     };
     fetchData();
@@ -46,7 +45,6 @@ function App() {
     <>
       <h1>Welcome to the Calendar App</h1>
       <Calendar data={data} view={view} />
-      {/* <Ref /> */}
     </>
   );
 }
