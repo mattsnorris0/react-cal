@@ -16,6 +16,7 @@
   --fc-button-active-bg-color: hsla(144, 5%, 20%, 0.8);
   --fc-button-active-border-color: #151e27;
   --fc-today-bg-color: hsla(144, 5%, 92%, 1);
+  --fc-event-text-color: #fff;
 }
 
 /* Keyframes for dialog and popover elements */
@@ -106,35 +107,9 @@ body {
   }
   a.fc-event {
     background-color: var(--color-primary);
-    color: var(--color-light);
+    color: #fff;
   }
 }
-
-/* #modal {
-  transition: display 0s allow-discrete, overlay 0s allow-discrete;
-  animation: fadeOut 0.5s forwards;
-  &::backdrop {
-    animation: backdropFadeOut 0.5s forwards;
-  }
-  &[open] {
-    animation: fadeIn 0.5s forwards;
-    &::backdrop {
-      animation: backdropFadeIn 0.5s forwards;
-    }
-  }
-} */
-
-/* .modal {
-  position: relative;
-  min-width: 50%;
-  margin:auto;
-  text-align: center;
-  min-height: 25%;
-  border-radius: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 #modal::backdrop {
   background-color: var(--color-primary);

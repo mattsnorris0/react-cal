@@ -43,7 +43,6 @@ function App() {
 
   return (
     <>
-      <h1>Welcome to the Calendar App</h1>
       <Calendar data={data} view={view} />
     </>
   );
