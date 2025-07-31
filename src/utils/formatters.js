@@ -19,37 +19,40 @@ export function formatLocation(location) {
 export function formatCalDate(timeStamp) {
   let ISOStamp = new Date(timeStamp);
 
-  // function getSuffix(day) {
-  //   if (day > 3 && day < 21) return 'th'; // Handles 11th, 12th, 13th, etc.
-  //   switch (day % 10) {
-  //     case 1:
-  //       return 'st';
-  //     case 2:
-  //       return 'nd';
-  //     case 3:
-  //       return 'rd';
-  //     default:
-  //       return 'th';
-  //   }
-  // }
+  function getSuffix(day) {
+    if (day > 3 && day < 21) return 'th'; // Handles 11th, 12th, 13th, etc.
+    switch (day % 10) {
+      case 1:
+        return 'st';
+      case 2:
+        return 'nd';
+      case 3:
+        return 'rd';
+      default:
+        return 'th';
+    }
+  }
+
+  const day = ISOStamp.getDate();
+  const suffix = getSuffix(day);
 
   if (timeStamp.length === 10) {
     const date = ISOStamp.toLocaleDateString('en-us', {
       month: 'long',
-      day: 'numeric',
       year: 'numeric',
     });
-    return `${date}`;
+    return `${date.split(' '[0])} ${day}${suffix}, ${date.split(' ')[1]}`;
   } else {
     const date = ISOStamp.toLocaleDateString('en-us', {
       month: 'long',
-      day: 'numeric',
       year: 'numeric',
     });
     const time = ISOStamp.toLocaleTimeString('en-us', {
       hour: 'numeric',
       minute: 'numeric',
     });
-    return `${date} at ${time}`;
+    return `${date.split(' ')[0]} ${day}${suffix}, ${
+      date.split(' ')[1]
+    } at ${time}`;
   }
 }
