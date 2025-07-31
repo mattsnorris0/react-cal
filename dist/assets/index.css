@@ -429,13 +429,10 @@ body {
 .calendar-modal h5 {
   margin-bottom: 10px;
 }
-.calendar-modal h4 {
-  font-size: 16px;
-  font-weight: 500;
-}
+.calendar-modal h4,
 .calendar-modal h5 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
 }
 #root {
   max-width: 1280px;
