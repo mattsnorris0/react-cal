@@ -409,6 +409,7 @@ body {
 .fc a.fc-event {
   background-color: var(--color-primary);
   color: #fff;
+  border: none;
   display: flex;
 }
 #modal::backdrop {
