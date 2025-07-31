@@ -6,10 +6,10 @@ export default function Dialogue({ closeModal, info }) {
       id='modal'
       className='fixed top-0 left-0 w-full h-full bg-[#9fa9a3]/80 flex items-center justify-center z-1'
     >
-      <div className='bg-white text-center p-[30px] rounded-lg shadow-lg relative min-w-[600px] max-h-[750px]'>
-        <h3 className='mb-[10px]'>{info.event.title}</h3>
-        <h4 className='mb-[10px]'>{formatLocation(info.event.extendedProps.location)}</h4>
-        <h5 className='mb-[10px]'>{formatCalDate(info.event.startStr)}</h5>
+      <div className='calendar-modal'>
+        <h3>{info.event.title}</h3>
+        <h4>{formatLocation(info.event.extendedProps.location)}</h4>
+        <h5>{formatCalDate(info.event.startStr)}</h5>
         <div>{info.event.extendedProps.description}</div>
         <button
           onClick={closeModal}

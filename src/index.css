@@ -108,10 +108,35 @@ body {
   a.fc-event {
     background-color: var(--color-primary);
     color: #fff;
+    display: flex;
   }
 }
 
 #modal::backdrop {
   background-color: var(--color-primary);
   opacity: 0.7;
+}
+
+.calendar-modal {
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: black 0 0 0 0;
+  position: relative;
+  max-width: 600px;
+}
+
+.calendar-modal {
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 10px;
+  }
+
+  h4,
+  h5 {
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
